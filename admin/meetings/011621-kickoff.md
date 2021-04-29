@@ -1,0 +1,96 @@
+# 1/16 Meeting Notes
+
+## Meeting Outline
+
+- Greeting each other
+  - Go around and say name, year, college, and where they're from
+    - Choose a get-to-know-you question:
+      - What have you thought about CSE 110 so far?
+      - Did you get a favorite present over the holidays?
+      - What do you consider your strengths or weaknesses on a team?
+  - Sadly Jonathan wasn't able to make it
+  - We'll be discussing future meeting times in a moment
+- Add everyone to the github!
+  - Collect usernames in zoom chat
+  - Can add them to the repo while we move on to discuss the team name
+- Discuss team name
+  - Any ideas would be appreciated!
+- Discuss future meeting times
+  - Right now on the when2meet there isn't a single time which works for everyone
+  - In an effort to make it so we can all meet we should reevaluate what times we can meet going forward
+  - It would be very helpful for us to all be a bit more generous with our time, so that we aren't excluding anyone from being able to participate
+  - Even making an obscure time available might give us more options
+- Spend 5-10 minutes updating the when2meet
+  - Look at options for future meetings
+  - Vote on when to meet in the future
+- Discuss first set of assignments
+  - Due Wednesday at midnight, so we need to get moving
+  - There are four of them, and unfortunately none are arbitrarily easy. They'll all take some work
+- Kickoff Meeting
+  - We're already doing it, yay!
+- Group Bonding Event
+  - Ideas: Codenames, Among us, Jackbox
+  - Hour long group activity
+  - Can hold after the meeting, or schedule soon
+  - Could try to hold now, but meeting will go long
+  - Need to submit a screenshot of us doing it
+- Group Page
+  - Need to make a group page on Github Wiki or Github Pages
+    - Should have our team "theme" or "brand"
+    - Should have roster
+    - Should have a link to each of our personal Github pages
+  - Also need a team video
+    - 2.5 minutes long
+    - Introduces all of us
+    - Does anyone have experience with video editing or recording?
+    - Could just do a quick recording in Zoom now, if people wanted to
+- Group Contract
+  - A document with two things:
+    - Definition of what is expected to be on the team
+    - Definition of how to address situations where group "rules" are not being followed
+  - Need every member to upload a signed PDF of the rules to the repo
+  - They suggest figuring out the rules in a rules.md document in our kickoff meeting
+- That's a lot of stuff...
+  - We'll need to get started
+  - We'll need to divide and conquer with this
+
+## Meeting Notes
+
+- Team 11/All for one and ten for all
+- Meeting at 11:30am on Zoom
+- Met Sasya our TA advisor
+  - She won’t be paying attention to the general chat
+- Did a round of general introductions
+  - Talked about what everyone thinks of this class
+  - Jamie, Dhanush, Brian, Haley, Arela, Ashley, and Ivan all were able to attend the meeting
+- Team name is All For One And Ten For All
+- Looks like Thursday 3:30 PM will work for everyone
+  - Haley might be at work, and might have variable levels of response
+- Monday at 3:00 we can have our group bonding event
+  - Can play Codenames
+- Maybe hold the video off until Monday, so Jonathan can be included
+- GIthub Page
+
+  - Brian will take charge on making the initial Github Wiki, will let us know on Slack when he’s got an initial page done
+  - https://ashk233.github.io/
+  - https://haleytran.github.io/
+  - https://lin-ister.github.io/lin-ister.lab2.io/
+  - https://ivluu.github.io/
+  - http://arelae.github.io
+  - https://james-c-lars.github.io/
+  - https://dnanjunda.github.io/
+
+- Rules
+  - Responsive to communication
+    - 6 hours to respond
+    - If you have an urgent question, use individual tags to notify people
+  - Send out a reminder about meetings a day before, but if can’t make it let someone know
+    - Even five minutes before the meeting its okay, just let us know
+  - Don’t commit directly to main, use a separate branch for your own work
+  - Reach out if you’re struggling with your task or unsure what to do
+    - Don’t try to fix everything yourself
+    - Remember you can ask anyone on the team for help
+  - Conflict handling
+    - Talk to someone individually before bringing it up with the group
+    - If someone continues to struggle, bring it up with the group and try to work through it collectively
+- Arela will write the rules markdown document

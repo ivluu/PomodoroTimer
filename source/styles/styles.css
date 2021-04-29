@@ -1,0 +1,396 @@
+/* Background and "number of complete pomodoros" colors */
+body {
+  /* Background color */
+  background-color: #08222e;
+  margin: 0;
+  font-family: Nunito, sans-serif;
+
+  /* Text color */
+  color: #b7daeb;
+}
+
+/* "SOURCE" text */
+a {
+  color: #b7daeb;
+  height: 1.5rem;
+  width: 5rem;
+  text-align: center;
+  padding: 0.3vw 0;
+  margin: 0 auto;
+  margin-top: 1.5vw;
+  font-size: 1.3vw;
+}
+
+/* Main page layout and colors */
+#all {
+  width: auto;
+  margin: 0 auto;
+  margin-top: 1em;
+  border-radius: 2vw;
+}
+
+/* Creates flexbox for most of layout */
+#main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#circle {
+  display: flex;
+  justify-content: center;
+}
+
+/* Main timer */
+#timer {
+  display: flex;
+  justify-content: center;
+  font-size: 7vw;
+  color: #b7daeb;
+  z-index: 0;
+  position: absolute;
+  margin-top: 8vw;
+  margin-left: 10.8vw;
+}
+
+#timer-container {
+  margin-top: -3vw;
+}
+
+/* start/stop btn */
+#mixBut {
+  /* color is changed in the html file */
+  background-color: #ff671d;
+  color: white;
+  width: 12vw;
+  height: 3.3vw;
+  font-family: Nunito, sans-serif;
+  margin: 0 auto;
+  float: left;
+  padding: 0.2vw;
+  border-radius: 3vw;
+  font-weight: bold;
+  font-size: 1.9vw;
+  border: none;
+}
+
+#mixBut:focus {
+  outline: none;
+}
+
+#mixBut:active {
+  outline: none;
+}
+
+#mixBut:hover {
+  outline: none;
+  background-color: #ff8d53;
+}
+
+/* reset btn */
+#reset-btn {
+  /* color is changed in the html file */
+  margin: 0 auto;
+  float: right;
+  padding: 0.2vw;
+  border-radius: 3vw;
+  font-weight: bold;
+  font-size: 1.9vw;
+  border: none;
+  background-color: #bd0000;
+  color: white;
+  width: 12vw;
+  height: 3.3vw;
+  font-family: Nunito, sans-serif;
+}
+
+#reset-btn:focus,
+#reset-btn:active {
+  outline: none;
+}
+
+#reset-btn:hover {
+  outline: none;
+  background-color: #f71a1a;
+}
+
+/* Aligns text "num of complete pomos */
+#completePomos {
+  text-align: center;
+  font-size: 1.3vw;
+}
+
+/* Settings css format */
+.modal {
+  overflow: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(3, 3, 3, 0.4); /* Black w/ opacity */
+}
+
+/* settings popup */
+#modal-settings-content {
+  /* background of settings */
+  background-color: #b7daeb;
+
+  /* Color of text */
+  color: #08222e;
+  text-align: center;
+  border-radius: 1.5vw;
+  border: 1px solid #888;
+  max-width: 28vw;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  margin: auto;
+  margin-top: 4vh;
+  max-height: 92vh;
+  overflow-y: scroll;
+}
+
+#modal-settings-content::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
+}
+
+#modal-settings-content::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+/* Lines up the "x" in the settings to the left */
+.close {
+  text-align: left;
+  color: #08222e;
+  float: left;
+  font-weight: bold;
+  font-size: calc(14px + 2vw);
+  margin-left: 1.2vw;
+  margin-top: 1vw;
+}
+
+/* Style for user input boxes */
+input[type="number"] {
+  border: 0;
+  width: calc(10px + 1vw);
+  margin-bottom: 2vh;
+  padding: 1vh;
+  border-radius: 0.6vw;
+  text-align: center;
+}
+
+/* Changes small text size in input boxes */
+:placeholder-shown {
+  font-size: 100%;
+  font-family: "Nunito", sans-serif;
+}
+
+/* Gets rid of box around volume control */
+fieldset {
+  border: 0;
+  height: 100px;
+  width: 300px;
+}
+
+#settings-btn {
+  height: 4vw;
+}
+
+#settings-btn:focus {
+  outline: none;
+}
+
+#stats-btn {
+  margin-left: 30vw;
+  height: 4vw;
+}
+
+#stats-btn:focus {
+  outline: none;
+}
+
+.modal::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+/* Changes font and size of alarm sounds */
+#changeSelect {
+  font-family: Nunito, sans-serif;
+  width: 12vw;
+  height: 5.2vh;
+  border-radius: 0.4vw;
+  outline: none;
+  border: none;
+  font-size: 1vw;
+}
+
+.settingText {
+  margin-top: 3vh;
+  font-family: Nunito, sans-serif;
+}
+
+/* Keeps volume slider relative to window size */
+#volume-slider {
+  width: 10vw;
+  float: left;
+  margin-left: 2.5vw;
+  margin-top: 0.5vw;
+}
+
+#volume-number {
+  width: 4vw;
+  float: right;
+}
+
+/* Changes size of "Settings" at top of settings */
+#modal-title {
+  font-size: 2.7vw;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: top;
+}
+
+/* Slightly alters spacing in settings */
+.modal-settings-customization {
+  font-size: 1.5vw;
+  width: 100%;
+}
+
+#minHead {
+  justify-self: right;
+  padding-left: 1vw;
+  margin-right: 3.2vw;
+  font-size: 1.3vw;
+}
+
+#secHead {
+  margin-left: 3vw;
+  padding-right: 1vw;
+  justify-self: left;
+  font-size: 1.3vw;
+}
+
+/* Puts input minutes to the left in settings */
+.minutes {
+  float: right;
+  margin-right: 4vw;
+}
+
+/* Puts input seconds to the right in settings */
+.seconds {
+  float: left;
+  margin-left: 4vw;
+}
+
+/* This the gray outline circle */
+.e-c-base {
+  fill: none;
+  stroke: #b6b6b6;
+  stroke-width: 10px;
+}
+
+/* This the red circle outline, disappear as timer counts down */
+.e-c-progress {
+  fill: none;
+  stroke: #c7edff;
+  stroke-width: 10px;
+  transition: stroke-dashoffset 0.7s;
+  stroke-linecap: round;
+}
+
+/* This the circle, moves as timer counts down */
+.e-c-pointer {
+  fill: none;
+}
+
+/* this determines the speed for red outline circle to disappear */
+#e-pointer {
+  transition: transform 0.7s;
+}
+
+/* Changes "x" to bold when mouse hovers over */
+.close:hover,
+.close:focus {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#len-grid {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+#vol-grid {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+#scroll-down {
+  position: fixed;
+  left: 48vw;
+  bottom: 2vw;
+  z-index: 1;
+  width: 3.7vw;
+  cursor: pointer;
+  filter: drop-shadow(0 0 0.15vw black);
+}
+
+#scroll-down:active,
+#scroll-down:focus {
+  outline: none;
+}
+
+#save-btn {
+  background-color: #ff671d;
+  border: none;
+  color: white;
+  border-radius: 3vw;
+  padding: 0.3vw;
+  width: 10vw;
+  font-size: 1.5vw;
+}
+
+#save-btn:focus,
+#save-btn:active {
+  outline: none;
+}
+
+#save-btn:hover {
+  background-color: #ff8d53;
+}
+
+.mod-item {
+  font-size: 1.5vw;
+  font-family: Nunito, sans-serif;
+}
+
+#clear-btn {
+  background-color: #ff671d;
+  border: none;
+  color: white;
+  border-radius: 3vw;
+  padding: 0.3vw;
+  width: 10vw;
+  margin-bottom: 1vw;
+  font-size: 1.2vw;
+}
+
+#clear-btn:focus,
+#clear-btn:active {
+  outline: none;
+}
+
+#clear-btn:hover {
+  background-color: #ff8d53;
+}
