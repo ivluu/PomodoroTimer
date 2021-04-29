@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="source/styles/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="stylesheet" href="source/styles/tasklist.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="utf-8" />
+  </head>
+
+  <body>
+    <div id="main">
+      <div id="all">
+        <input
+          type="image"
+          src="source/images/dwn-caret.png"
+          id="scroll-down"
+          onclick="document.documentElement.scrollTop = document.documentElement.scrollHeight"
+          onmouseover="this.src='source/images/dwn-caret-hover.png'"
+          onmouseout="this.src='source/images/dwn-caret.png'"
+        />
+        <div id="Settings">
+          <input
+            type="image"
+            src="source/images/gear-icon.png"
+            id="settings-btn"
+            onclick="document.getElementById('settings-modal').style.display = 'block'"
+            onmouseover="this.src='source/images/gear-icon-hover.png'"
+            onmouseout="this.src='source/images/gear-icon.png'"
+          />
+          <input
+            type="image"
+            src="source/images/stats-icon.png"
+            id="stats-btn"
+            onclick="document.getElementById('stats-modal').style.display = 'block'"
+            onmouseover="this.src='source/images/stats-icon-hover.png'"
+            onmouseout="this.src='source/images/stats-icon.png'"
+          />
+
+          <!-- Settings modal> -->
+          <div id="settings-modal" class="modal">
+            <div id="modal-settings-content" class="mod-grid">
+              <div class="mod-item">
+                <span
+                  class="close"
+                  onclick="document.getElementById('settings-modal').style.display = 'none'"
+                  >&times;</span
+                >
+              </div>
+              <div>
+                <div id="modal-title" style="padding-bottom: 0.6vw">
+                  SETTINGS
+                </div>
+                <hr
+                  style="
+                    color: black;
+                    background-color: #08222e;
+                    height: 2px;
+                    border: 0;
+                    width: 25vw;
+                    min-width: 200px;
+                  "
+                />
+              </div>
+              <form id="saveSettings">
+                <div class="mod-item" style="padding-bottom: 0.7vw">
+                  Short Break Length
+                </div>
+
+                <div>
+                  <input
+                    type="number"
+                    placeholder="Minutes"
+                    class="pomos"
+                    id="shortBreakPomos"
+                    value="5"
+                    max="120"
+                    min="0"
+                  />
+                  <hr
+                    style="
+                      color: black;
+                      background-color: #08222e;
+                      height: 2px;
+                      border: 0;
+                      width: 25vw;
+                      min-width: 200px;
+                    "
+                  />
+                </div>
+                <div class="mod-item" style="padding-bottom: 0.7vw">
+                  Long Break Length
+                </div>
+                <div>
+                  <input
+                    type="number"
+                    placeholder="Minutes"
+                    class="pomos"
+                    id="breakPomos"
+                    value="30"
+                    max="120"
+                    min="0"
+                  />
+                  <hr
+                    style="
+                      background-color: #08222e;
+                      height: 2px;
+                      border: 0;
+                      width: 25vw;
+                      min-width: 200px;
+                    "
+                  />
+                </div>
+                <div class="mod-item" style="padding-bottom: 0.7vw">
+                  Pomodoros until Long Break
+                </div>
+                <div>
+                  <input
+                    type="number"
+                    placeholder="Pomos"
+                    class="pomos"
+                    id="userPomos"
+                    value="4"
+                    min="0"
+                  />
+                </div>
+                <hr
+                  style="
+                    color: black;
+                    background-color: #08222e;
+                    height: 2px;
+                    border: 0;
+                    width: 25vw;
+                    min-width: 200px;
+                  "
+                />
+                <div class="mod-item">
+                  <p>Pomodoro Length</p>
+                </div>
+                <div>
+                  <div id="len-grid">
+                    <div id="minHead" style="padding-bottom: 0.6vw">
+                      Minutes
+                    </div>
+                    <div id="secHead" style="padding-bottom: 0.6vw">
+                      Seconds
+                    </div>
+                    <div id="len-item">
+                      <input
+                        type="number"
+                        placeholder="Min"
+                        class="minutes"
+                        id="userMins"
+                        value="25"
+                        max="120"
+                        min="0"
+                      />
+                    </div>
+                    <div id="len-item">
+                      <input
+                        type="number"
+                        placeholder="Seconds"
+                        class="seconds"
+                        min="0"
+                        step="1"
+                        id="userSecs"
+                        value="0"
+                        max="59"
+                      />
+                    </div>
+                  </div>
+                  <hr
+                    style="
+                      color: black;
+                      background-color: #08222e;
+                      height: 2px;
+                      border: 0;
+                      width: 25vw;
+                      min-width: 200px;
+                    "
+                  />
+                </div>
+                <div class="mod-item" style="padding-bottom: 0.7vw">
+                  Notification Sound
+                </div>
+
+                <div>
+                  <select
+                    id="changeSelect"
+                    name="alarmMusic"
+                    onselect="sound()"
+                  >
+                    <option value="Chirp">Chirp</option>
+                    <option value="Alarm-Clock">Alarm Clock</option>
+                    <option value="None">None</option>
+                  </select>
+                  <hr
+                    style="
+                      color: black;
+                      background-color: #08222e;
+                      height: 2px;
+                      border: 0;
+                      width: 25vw;
+                      min-width: 200px;
+                    "
+                  />
+                </div>
+
+                <div class="mod-item" style="padding-bottom: 0.7vw">
+                  <label
+                    for="volume-number"
+                    class="settingText"
+                    id="volume-text"
+                    >Volume
+                  </label>
+                </div>
+                <div id="vol-grid">
+                  <div>
+                    <input
+                      id="volume-number"
+                      name="volume-number"
+                      type="number"
+                      min="0"
+                      max="100"
+                      value="100"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      id="volume-slider"
+                      name="volume-slider"
+                      type="range"
+                      min="0"
+                      max="100"
+                      value="100"
+                    />
+                  </div>
+                </div>
+                <input
+                  id="save-btn"
+                  type="submit"
+                  value="Save"
+                  style="margin: auto; margin-bottom: 1.5vw"
+                />
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div id="stats-modal" class="modal">
+          <div id="modal-settings-content">
+            <span
+              class="close"
+              style="width: 5vw"
+              onclick="document.getElementById('stats-modal').style.display = 'none'"
+              >&times;</span
+            >
+            <div>
+              <div id="modal-title" style="padding-bottom: 0.7vw">
+                STATISTICS
+              </div>
+              <hr
+                style="
+                  color: black;
+                  background-color: #08222e;
+                  height: 2px;
+                  border: 0;
+                  width: 25vw;
+                  min-width: 200px;
+                "
+              />
+              <p id="completePomos">Completed Pomodoros: 0</p>
+              <hr />
+              <label style="font-size: 1.3vw" id="completedLabel"
+                ><u>Completed Tasks</u></label
+              >
+              <br />
+              <section id="completed-tasks" class="stats-grid">
+                <!-- Tasks get added here when they're done -->
+              </section>
+              <button id="clear-btn">CLEAR</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timer  -->
+        <div id="timer-container">
+          <!-- Makes timer into larger font -->
+          <h1>
+            <div id="timer">
+              <span id="minute">25</span> :
+              <span id="seconds">00</span>
+            </div>
+            <!--Timer circle animation-->
+            <div class="circle">
+              <svg
+                width="26vw"
+                viewBox="0 0 220 220"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g transform="translate(110,110)">
+                  <circle r="100" class="e-c-base" />
+                  <g transform="rotate(-90)">
+                    <circle r="100" class="e-c-progress" />
+                    <g id="e-pointer">
+                      <circle cx="100" cy="0" r="8" class="e-c-pointer" />
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <!-- Turns start into stop button with changing colors -->
+            <input type="button" id="mixBut" value="START" />
+            <button id="reset-btn">RESET</button>
+          </h1>
+        </div>
+        <br />
+        <!-- States the complete number of pomodoros -->
+        <p id="current-task">Current Task: None</p>
+        <section id="select-task" class="select-task" style="display: none">
+          <p>
+            Please click on a task you would like to start. <br />
+            Then press 'Start' again to begin the Pomo session.
+          </p>
+        </section>
+        <section id="select-task"></section>
+        <div id="title">TASKS</div>
+
+        <section id="task-list" class="grid-container">
+          <div id="head" class="nested-grid">
+            <div class="grid-item" id="list-title1">Task</div>
+            <div class="grid-item" id="list-title2">Time</div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+          </div>
+
+          <div id="tasks">
+            <div id="no-task">Tasks Complete!</div>
+          </div>
+        </section>
+
+        <form id="form">
+          <div id="new-task">
+            <p class="grid-item" id="task-title1">Task</p>
+            <p class="grid-item" id="task-title2">Pomos</p>
+            <input
+              class="grid-item"
+              type="text"
+              id="task-name"
+              placeholder="Task name"
+              required
+            />
+            <div>
+              <button id="minus" type="button">-</button>
+              <input
+                class="grid-item"
+                type="number"
+                id="pomo-num"
+                value="1"
+                min="1"
+                max="4"
+              />
+              <button id="plus" type="button">+</button>
+            </div>
+          </div>
+
+          <div id="btnGrid">
+            <button id="add" class="button-on" type="submit">ADD</button>
+            <button
+              id="clear"
+              class="button-off"
+              type="button"
+              onclick="clearList()"
+            >
+              CLEAR
+            </button>
+          </div>
+        </form>
+      </div>
+      <script src="source/scripts/task-list.js" type="module"></script>
+      <script src="source/scripts/list-btns.js" type="module"></script>
+      <script src="source/scripts/settings.js" type="module"></script>
+      <script src="source/scripts/stats.js" type="module"></script>
+      <a
+        href="https://github.com/james-c-lars/cse110-w21-group11.git"
+        onmouseover="this.style.color = '#97d4f3'"
+        onmouseout="this.style.color = '#b7daeb'"
+        >SOURCE</a
+      >
+    </div>
+  </body>
+  <footer>
+    <!-- <div style="color: white;">Icons made by <a href="" style="color: white;" title="Icongeek26">Icongeek26</a> from <a style="color: white;" href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+  </footer>
+</html>
