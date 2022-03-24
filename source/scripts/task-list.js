@@ -11,14 +11,15 @@ export class Task extends window.HTMLElement {
 
     const wrapper = document.createElement("form");
     wrapper.setAttribute("class", "nested-grid");
-
+  
+    <!-- create new list item -->
     const taskName = document.createElement("p");
     taskName.setAttribute("id", "task-name");
     taskName.onclick = () => {
       selectTask(taskName);
     };
     taskName.textContent = task.taskName;
-
+    
     const editName = document.createElement("input");
     editName.setAttribute("id", "edit-name");
     editName.value = taskName.textContent;
@@ -34,7 +35,8 @@ export class Task extends window.HTMLElement {
     pomoNum.setAttribute("required", "");
     pomoNum.setAttribute("readonly", "true");
     pomoNum.value = task.pomoNum;
-
+    
+    <!-- create new delete button -->
     const deleteTask = document.createElement("button");
     deleteTask.setAttribute("type", "button");
     deleteTask.setAttribute("id", "delete");
@@ -54,7 +56,8 @@ export class Task extends window.HTMLElement {
         document.getElementById("no-task").style.display = "block";
       }
     });
-
+    
+    <!-- create new edit button -->
     const editTask = document.createElement("button");
     editTask.setAttribute("id", "edit");
     editTask.textContent = "Edit";
@@ -62,6 +65,8 @@ export class Task extends window.HTMLElement {
     wrapper.addEventListener("submit", function (e) {
       e.preventDefault();
       if (editTask.textContent === "Edit") {
+        
+        <!-- edit current name -->
         editTask.textContent = "Done";
         taskName.style.display = "none";
         editName.style.display = "block";
@@ -69,6 +74,8 @@ export class Task extends window.HTMLElement {
         pomoNum.readOnly = false;
         pomoNum.style.background = "#f0f0f0";
       } else {
+        
+        <!-- save new name -->
         editTask.textContent = "Edit";
         taskName.style.display = "block";
         editName.style.display = "none";
@@ -87,12 +94,14 @@ export class Task extends window.HTMLElement {
       }
     });
 
+    <!-- add list item elements -->
     wrapper.appendChild(taskName);
     wrapper.appendChild(editName);
     wrapper.appendChild(pomoNum);
     wrapper.appendChild(editTask);
     wrapper.appendChild(deleteTask);
 
+    <!-- style new list items -->
     const style = document.createElement("style");
     style.textContent = `.nested-grid {
           display: grid;
